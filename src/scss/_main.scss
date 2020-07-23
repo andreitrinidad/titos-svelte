@@ -1,0 +1,185 @@
+.navigation {
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  width: 100%;
+  padding: 0 20px;
+  justify-content: center;
+  align-items: center;
+
+  @include tablet {
+    flex-direction: row;
+    height: 50px;
+    justify-content: space-between;
+    background-color: $whitish-white;
+  }
+
+  .logo {
+    > * {
+      display: inline-block;
+      @include font-display(20);
+      color: $just-black;
+      line-height: 50px;
+    }
+
+    &__text{
+      @include mobile-only {
+        display: none;
+      }
+    }
+
+    img {
+      width: 43px;
+      margin-right: 20px;
+
+      @include mobile-only {
+        line-height: 0;
+        margin-right: 0;
+        margin-top: 30px;
+      }
+    }
+    
+  }
+
+  .links {
+    list-style-type: none;
+    @include font-text(12, bold);
+
+    @include mobile-only{
+      display: flex;
+      justify-content: space-evenly;
+      width: 100%;
+    }
+
+    li {
+      display: inline-block;
+      line-height: 50px;
+
+      @include tablet {
+        margin-right: 55px;
+      }
+    }
+  }
+}
+
+
+.landing {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 100px);
+  width: 100vw;
+  overflow: hidden;
+  // background: salmon;
+  @include font-text(null, bold);
+  min-height: 500px;
+
+  @include tablet {
+    height: calc(100vh - 50px);
+
+  }
+
+  &__logo{
+    text-align: center;
+    
+    img {
+      width: 300px;
+      margin-top: 50px;
+
+      @include tablet {
+        width: unset;
+      }
+    }
+  }
+
+  h1 {
+    // display: block;
+
+    color: $just-black;
+    position: relative;
+    width: 100vw;
+    font-size: 60px;
+    line-height: 60px;
+    margin:  0 auto;
+    // text-align: left;
+    // margin-right: 0;
+    // background-color: red;
+    // overflow-y: hidden;
+    // overflow-y: visible;
+    // overflow-x: hidden;
+    // margin-right: 50px;
+
+    @include tablet {
+      font-size: 100px;
+      margin-bottom: 45px;
+      text-align: center;
+    }
+
+    span { 
+      position: relative;
+      // overflow: hidden;
+      width: 100%;
+      // height: 100vh;
+     
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        height: 100%;
+        width: 100vw;
+        background-color: $yellowish;
+        z-index: -1;
+      }
+
+      
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: -20px;
+        height: 100%;
+        width: 100%;
+        background-color: $yellowish;
+        z-index: -1;
+      }
+
+                    
+      h2 {
+        position: absolute;
+        top: -50px;
+        left: 0;
+        right: 0;
+        font-size: 30px;
+
+        color: $not-so-black;
+        opacity: 40%;
+        text-align: left;
+
+
+        @include tablet {
+          font-size: 60px;
+          
+        }
+      }
+
+      h3 {
+        position: absolute;
+        bottom: -40px;
+        right: 0;
+        font-size: 12px;
+        text-align: right;
+      }
+    }
+
+  }
+
+  &__scroll {
+    position: absolute;
+    @include font-text(null, 300);
+    bottom: 10px;
+  }
+}
