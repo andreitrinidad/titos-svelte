@@ -1,4 +1,20 @@
+.maincontainer {
+  height: 100vh;
+  overflow-x: hidden;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+}
 
+section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  scroll-snap-align: start;
+}
+
+footer {
+  scroll-snap-align: start;
+}
 
 .navigation {
   position: fixed;
@@ -7,15 +23,26 @@
   flex-direction: column;
   height: 100px;
   width: 100%;
-  padding: 0 20px;
+  padding: 0 80px;
   justify-content: center;
   align-items: center;
+  z-index: 10;
+  background: transparent;
+  transition: all 200ms ease-in-out;
+
+  &.scrolled {
+    height: 50px;
+    padding: 0 40px;
+
+    @include tablet {
+      background: $whitish-white;
+    }
+  }
 
   @include tablet {
     flex-direction: row;
-    height: 50px;
     justify-content: space-between;
-    // background-color: $whitish-white;
+
   }
 
   .logo {
@@ -58,7 +85,8 @@
     @include font-text(12, bold);
 
     @include mobile-only{
-      display: flex;
+      display: none;
+      // display: flex;
       justify-content: space-evenly;
       width: 100%;
     }
@@ -84,13 +112,9 @@
 
 .landing {
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   height: 100vh;
   width: 100vw;
   overflow: hidden;
-  // background: salmon;
   @include font-text(null, bold);
   min-height: 500px;
 
@@ -107,7 +131,6 @@
       }
       
       transition:  all 200ms ease-in-out;
-
 
       &:hover {
         transform: translateY(20px);
@@ -132,10 +155,7 @@
 
     span { 
       position: relative;
-      // overflow: hidden;
       width: 100%;
-      // height: 100vh;
-     
 
       &:before {
         content: '';
@@ -168,15 +188,12 @@
         left: 0;
         right: 0;
         font-size: 30px;
-
         color: $not-so-black;
         opacity: 40%;
         text-align: left;
 
-
         @include tablet {
           font-size: 60px;
-          
         }
       }
 
@@ -221,31 +238,25 @@
   }
 }
 
-
 // Mission Vision block
 .mv {
-  display: flex;
-  height: 100%;
   width: 100vw;
   flex-direction: column;
-  justify-content: center;
 
   @include mobile-only {
-    padding: 30px 0;
+    padding: 50px 0;
+    min-height: 100vh;
   }
 
   @include tablet {
     height: 100vh;
   }
 
-  // background-color: $whitish-white;
-
   .mv-container {
     margin-top: 30px;
     width: 100vw;
     position: relative;
 
-    // background-color: red;
     &::before {
       content: '';
       position: absolute;
@@ -254,19 +265,13 @@
       height: 100%;
       width: 50%;
       background-color: $yellowish;
-
     }
-
-    // height: 300px;
 
     .mv-wrapper {
       display: flex;
       position: relative;
       max-width: 1280px;
-      // height: 100%;
       margin: 0  auto;
-      // background-color: salmon;
-
 
       .h2-display {
         position: absolute;
@@ -279,14 +284,10 @@
 
       .mv-text-container {
         background-color: $yellowish;
-
-        // background-color: grey;
         border-radius: 20px;
         width: 80%;
-        // width: percentage(665 / 1280);
         height: 100%;
         padding: 48px 30px 32px 40px;
-
         @include font-text(14, regular);
 
         @include tablet {
@@ -297,9 +298,7 @@
         @include desktop {
           width: percentage(665 / 1280);
         }
-
       }
-
     }
 
     &--right {
@@ -327,25 +326,17 @@
           @include tablet {
             width: percentage(500 / 768);
             padding: 48px 40px 32px 85px;
-
           }
         }
       }
     }
   }
-
-
 }
 
 .titos {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
   height: 100vh;
   width: 100vw;
-
-  // background-color: pink;
   
   h1 {
     color: $lesser-grey;
@@ -364,23 +355,17 @@
 
     @include tablet {
       margin-bottom: 80px;
-
     }
   }
-
   
   &__container {
     display: flex;
-    // border: solid 1px blue;
     justify-content: space-between;
     width: 80%;
     flex-wrap: wrap;
 
-    
-
     @include tablet {
       width: percentage(700 / 768);
-
     }
 
     @include desktop {
@@ -389,12 +374,10 @@
     }
 
     figure {
-      // border: solid 1px red;
       width: 150px;
       text-align: center;
 
       @include mobile-only {
-
         &:first-of-type {
           margin-bottom: 30px;
         }
@@ -406,6 +389,7 @@
         margin-bottom: 10px;
         border-radius: 50%;
         filter: grayscale(1);
+        transition: all 200ms ease-in-out;
       }
 
       figcaption {
@@ -423,12 +407,9 @@
 }
 
 .about {
-  display: flex;
   height: 100vh;
   width: 100vw;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   text-align: center;
 
   hr {
@@ -436,7 +417,11 @@
     width: 40px;
     border: solid 3px $yellow;
     border-radius: 3px;
-    margin-top: 40px;
+    margin-top: 20px;
+
+    @include tablet {
+      margin-top: 40px;
+    }
 
     &:nth-of-type(2) {
       width: calc(100% - 60px);
@@ -449,10 +434,12 @@
   }
 
   h2 {
-    margin-top: 40px;
+    margin-top: 20px;
+    @include tablet {
+      margin-top: 40px;
+    }
     opacity: 0.4;
     @include font-display(40);
-
   }
 
   p {
@@ -461,7 +448,6 @@
     @include desktop {
       margin: 0;
       max-width: 830px;
-
     }
   }
 
@@ -486,7 +472,6 @@
     img {
       width: 100%;
       height: 100%;
-      // object-fit: cover;
       filter: grayscale(1) contrast(10);
       opacity: .70;
     }

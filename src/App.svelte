@@ -1,6 +1,11 @@
 <script>
   let thisYear = new Date().getFullYear();
+  let scrolled = false;
 
+  function scrollIt(e) {
+    e.preventDefault();
+    e.target.scrollTop > 50 ? scrolled = true : scrolled = false;
+  }
 
 </script>
 
@@ -9,19 +14,21 @@
   <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Roboto+Slab:wght@300;400;700&display=swap" rel="stylesheet">
 </svelte:head>
 
+
 <main>
-	<nav class="navigation">
+	<nav class="navigation {scrolled && 'scrolled'}">
 		<a href="#" class="logo">
 			<img src="./images/logo.svg" alt="">
 			<div class="logo__text">Titos of Llano</div>
 		</a>
 		<ul class="links">
-			<li><a href="#">Our mission</a></li>
-			<li><a href="#">Our vision</a></li>
-			<li><a href="#">Who we are</a></li>
-			<li><a href="#">The titos</a></li>
+			<li><a href="#mission-vision">Mission x Vision</a></li>
+			<li><a href="#titos">The titos</a></li>
+      <li><a href="#about">Who we are</a></li>
 		</ul>
 	</nav>
+
+  <div class="maincontainer" on:scroll={ scrollIt }>
  
 	<section class="landing">
     <div class="landing__logo">
@@ -42,7 +49,7 @@
 	</section>
  
 
-  <section class="mv">
+  <section class="mv" id="mission-vision">
     <div class="mv-container">
       <div class="mv-wrapper">
         <h2 class="h2-display">Mission</h2>
@@ -61,9 +68,9 @@
     </div>
   </section>
 
-  <section class="titos">
+  <section class="titos" id="titos">
     <h1>The Titos</h1>
-    <p>We are at our prime age--the 20s in which we feel the existential crisis the most.</p>
+    <p>We are at our prime age—the 20s in which we feel the existential crisis the most.</p>
     <div class="titos__container">
       <figure>
         <img src="./images/tito1.png" alt="">
@@ -101,7 +108,7 @@
 
   </section>
 
-  <section class="about">
+  <section class="about" id="about">
     <hr>
     <h2>About us</h2>
     <p>
@@ -111,27 +118,27 @@
     <h2>Socials</h2>
     <div>
       <a href="#"><img src="./images/fb.svg" alt=""></a>
-      <!-- <a href="#"><img src="./images/fb.svg" alt=""></a> -->
       <a href="#"><img src="./images/ig.svg" alt=""></a>
       <a href="#"><img src="./images/tw.svg" alt=""></a>
     </div>
     <hr>
   </section>
-
   <footer>
     <div class="wrapper">
       <p>Titos of Llano &copy; All Rights Reserved {thisYear}</p>
       <p>a site by <a href="https://fb.me/ughndrei">andreitrinidad</a></p>
     </div>
   </footer>
+  </div>
+
+
+
 </main>
 
 <style type="text/scss">
   @import './scss/breakpoint';
   @import './scss/variables';
   
-
-
   @mixin font-display($size: 12px, $weight: normal) {
     font-family: 'Kaushan Script', cursive;
     font-size: #{$size}px;
@@ -149,6 +156,11 @@
 		margin: 0;
 		padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
+
+  :global(html) {
+    // scroll-behavior: smooth;
   }
   
   a {
@@ -156,13 +168,6 @@
     color: unset;
   }
 
-  // main 
-
-  main {
-    scroll-snap-type: y mandatory;
-    width: calc(100vw - 0); //for some reason it fixes scrollbar bug
-    overflow-x: hidden;
-  }
 
   @import './scss/main';
 
