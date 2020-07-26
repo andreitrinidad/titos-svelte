@@ -54,7 +54,8 @@
       <div class="mv-wrapper">
         <h2 class="h2-display">Mission</h2>
         <div class="mv-text-container">
-          Bacon ipsum dolor amet venison meatloaf pork chop prosciutto short loin porchetta rump cupim. Venison brisket turkey, leberkas sausage cupim kevin short loin drumstick ham capicola ham hock corned beef tenderloin bacon. Drumstick prosciutto ground round burgdoggen filet mignon. Pork chop salami pastrami capicola kielbasa sirloin meatloaf chislic pork loin. Buffalo t-bone burgdoggen tri-tip shankle, tenderloin filet mignon.
+          The mission of the TITO’S OF LLANO (TOL) COMMUNITY ORGANIZATION, INC., has
+          a tri-fold theoretical foundation; first is to serve the community in partnership with practitioners, professionals, educators, individuals (whom defined within this article as the surface-members of the organization) and the organization founders itself fore as to but not limited to engage in community-based programs and projects that will help fore as to but not limited to a. maladjusted individuals whom are members of the community or the organization itself., b. for those whom are in dire need of efficacy service or help and., c. for the citizenry of Barangay 167, Llano North Caloocan City
         </div>
       </div>
     </div>
@@ -62,7 +63,7 @@
       <div class="mv-wrapper">
         <h2 class="h2-display">Vision</h2>
         <div class="mv-text-container">
-          Bacon ipsum dolor amet venison meatloaf pork chop prosciutto short loin porchetta rump cupim. Venison brisket turkey, leberkas sausage cupim kevin short loin drumstick ham capicola ham hock corned beef tenderloin bacon. Drumstick prosciutto ground round burgdoggen filet mignon. Pork chop salami pastrami capicola kielbasa sirloin meatloaf chislic pork loin. Buffalo t-bone burgdoggen tri-tip shankle, tenderloin filet mignon.
+          The main objective of the organization, pertaining to but not limited to; - increase equity and justice for those people with a limited voice in the public life; promote social equity through discourse and discussions that reflects an array of values, moral standards and social identities; engage communities and other stakeholders pertaining to, but not limited to the scope and limitations of the community area in participatory-making and policy ruling within the localities and customary sanctions of the community; create strategies that integrate collectiveness and participation among young-adult citizens of Barangay 167 Llano purposively for the pivotal value of unity; advance the right of every citizens in a socially, economically and environmentally driven community and; generate systematic ideas, projects and programs that are community-based solutions and which build local capacity that will ideally promotes the highest standard of quality-living inside the community per se.
         </div>
       </div>
     </div>
@@ -112,7 +113,7 @@
     <hr>
     <h2>About us</h2>
     <p>
-      Bacon ipsum dolor amet venison meatloaf pork chop prosciutto short loin porchetta rump cupim. Venison hrisket turkey, leberkas sausage cupim kevin short loin drumstick ham capicola ham hock corned beef tenderloin bacon. Drumstick prosciutto ground round burgdoggen filet mignon. Pork chop salami pastrami capicola kielbasa sirloin meatloaf chislic pork loin. Buffalo t-bone burgdoggen tri-tip shankle, tenderloin filet mignon.
+      An organization composed of young adults’ citizens of Barangay. 167, Llano North Caloocan City, with passion driven perception and compassionate as a catalyst of change for the organization and the community itself. Pertaining to, but not limited to, Young Professionals of Barangay 167, with pleasing personality and lived with the spirit of leadership.
     </p>
     <hr>
     <h2>Socials</h2>
@@ -157,10 +158,6 @@
 		padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
-  }
-
-  :global(html) {
-    // scroll-behavior: smooth;
   }
   
   a {
