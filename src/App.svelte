@@ -1,5 +1,7 @@
 <script>
-	export let name;
+  let thisYear = new Date().getFullYear();
+
+
 </script>
 
 <svelte:head>
@@ -20,35 +22,115 @@
 			<li><a href="#">The titos</a></li>
 		</ul>
 	</nav>
+ 
 	<section class="landing">
     <div class="landing__logo">
       <h1>
         <span>
           <h2>We are</h2>
-          Titos of Llano
+          Titos of Llano.
           <h3>A non-profit organization™</h3>
         </span>
       </h1>
       <img src="./images/mustache.svg" alt="">
     </div>
+
     <div class="landing__scroll">
-      Under maintenance. Come back again soon!
+      <img src="./images/arrow-down.svg" alt="">
+      <p>scroll</p>
     </div>
 	</section>
+ 
+
+  <section class="mv">
+    <div class="mv-container">
+      <div class="mv-wrapper">
+        <h2 class="h2-display">Mission</h2>
+        <div class="mv-text-container">
+          Bacon ipsum dolor amet venison meatloaf pork chop prosciutto short loin porchetta rump cupim. Venison brisket turkey, leberkas sausage cupim kevin short loin drumstick ham capicola ham hock corned beef tenderloin bacon. Drumstick prosciutto ground round burgdoggen filet mignon. Pork chop salami pastrami capicola kielbasa sirloin meatloaf chislic pork loin. Buffalo t-bone burgdoggen tri-tip shankle, tenderloin filet mignon.
+        </div>
+      </div>
+    </div>
+    <div class="mv-container mv-container--right">
+      <div class="mv-wrapper">
+        <h2 class="h2-display">Vision</h2>
+        <div class="mv-text-container">
+          Bacon ipsum dolor amet venison meatloaf pork chop prosciutto short loin porchetta rump cupim. Venison brisket turkey, leberkas sausage cupim kevin short loin drumstick ham capicola ham hock corned beef tenderloin bacon. Drumstick prosciutto ground round burgdoggen filet mignon. Pork chop salami pastrami capicola kielbasa sirloin meatloaf chislic pork loin. Buffalo t-bone burgdoggen tri-tip shankle, tenderloin filet mignon.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="titos">
+    <h1>The Titos</h1>
+    <p>We are at our prime age--the 20s in which we feel the existential crisis the most.</p>
+    <div class="titos__container">
+      <figure>
+        <img src="./images/tito1.png" alt="">
+        <figcaption>
+          <a href="#" id="">
+            Kenn Palma
+          </a>
+        </figcaption>
+      </figure>
+      <figure>
+        <img src="./images/tito2.png" alt="">
+        <figcaption>
+          <a href="#" id="">
+            Rey Bersabal
+          </a>
+        </figcaption>
+      </figure>
+      <figure>
+        <img src="./images/tito4.png" alt="">
+        <figcaption>
+          <a href="#" id="">
+            Andrei Trinidad
+          </a>
+        </figcaption>
+      </figure>
+      <figure>
+        <img src="./images/tito3.png" alt="">
+        <figcaption>
+          <a href="#" id="">
+            Mark Bernardo
+          </a>
+        </figcaption>
+      </figure>
+    </div>
+
+  </section>
+
+  <section class="about">
+    <hr>
+    <h2>About us</h2>
+    <p>
+      Bacon ipsum dolor amet venison meatloaf pork chop prosciutto short loin porchetta rump cupim. Venison hrisket turkey, leberkas sausage cupim kevin short loin drumstick ham capicola ham hock corned beef tenderloin bacon. Drumstick prosciutto ground round burgdoggen filet mignon. Pork chop salami pastrami capicola kielbasa sirloin meatloaf chislic pork loin. Buffalo t-bone burgdoggen tri-tip shankle, tenderloin filet mignon.
+    </p>
+    <hr>
+    <h2>Socials</h2>
+    <div>
+      <a href="#"><img src="./images/fb.svg" alt=""></a>
+      <!-- <a href="#"><img src="./images/fb.svg" alt=""></a> -->
+      <a href="#"><img src="./images/ig.svg" alt=""></a>
+      <a href="#"><img src="./images/tw.svg" alt=""></a>
+    </div>
+    <hr>
+  </section>
+
+  <footer>
+    <div class="wrapper">
+      <p>Titos of Llano &copy; All Rights Reserved {thisYear}</p>
+      <p>a site by <a href="https://fb.me/ughndrei">andreitrinidad</a></p>
+    </div>
+  </footer>
 </main>
 
 <style type="text/scss">
   @import './scss/breakpoint';
+  @import './scss/variables';
   
-  // variables
-  $yellow: #F8EFE0;
-  $yellowish: #FFFAF1;
-  $white: #fff;
-  $whitish-white: #F5F5F5;
-  $just-black: #3B444B;
-  $not-so-black: #414A4C;
-  $grey: #707070;
-  $lesser-grey: #B1B4B7;
+
 
   @mixin font-display($size: 12px, $weight: normal) {
     font-family: 'Kaushan Script', cursive;
@@ -66,7 +148,7 @@
 	:global(body), * {
 		margin: 0;
 		padding: 0;
-		box-sizing: border-box;
+    box-sizing: border-box;
   }
   
   a {
@@ -74,7 +156,37 @@
     color: unset;
   }
 
+  // main 
 
+  main {
+    scroll-snap-type: y mandatory;
+    width: calc(100vw - 0); //for some reason it fixes scrollbar bug
+    overflow-x: hidden;
+  }
 
   @import './scss/main';
+
+  footer {
+    width: 100%;
+    @include font-text(12);
+    background-color: $whitish-white;
+
+    .wrapper {
+      display: flex;
+      justify-content: space-between;  
+      margin: 0 auto;
+      max-width: 1280px;
+      padding: 10px 30px;
+    }
+
+    a {
+      &:hover{
+       text-decoration: underline;
+      }
+    }
+
+    p:last-of-type {
+      text-align: right;
+    }
+  }
 </style>
