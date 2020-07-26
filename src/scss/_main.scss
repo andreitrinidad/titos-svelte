@@ -361,7 +361,7 @@ footer {
   &__container {
     display: flex;
     justify-content: space-between;
-    width: 70%;
+    width: 100%;
     flex-wrap: wrap;
 
     @include tablet {
