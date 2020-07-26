@@ -34,7 +34,7 @@ footer {
     height: 50px;
     padding: 0 40px;
 
-    @include tablet {
+    @include desktop {
       background: $whitish-white;
     }
   }
