@@ -361,7 +361,7 @@ footer {
   &__container {
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    width: 80%;
     flex-wrap: wrap;
 
     @include tablet {
@@ -374,13 +374,17 @@ footer {
     }
 
     figure {
-      width: 150px;
+      width: 120px;
       text-align: center;
 
       @include mobile-only {
         &:first-of-type {
           margin-bottom: 30px;
         }
+      }
+
+      @include tablet {
+        width: 150px;
       }
 
       img {
