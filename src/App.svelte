@@ -12,6 +12,7 @@
 <svelte:head>
 	<title>Titos of Llano</title>
   <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Roboto+Slab:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="./images/favicon.png"/>
 </svelte:head>
 
 
