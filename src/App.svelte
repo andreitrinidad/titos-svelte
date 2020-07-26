@@ -18,7 +18,7 @@
 
 <main>
 	<nav class="navigation {scrolled && 'scrolled'}">
-		<a href="#" class="logo">
+		<a href="#landing" class="logo">
 			<img src="./images/logo.svg" alt="">
 			<div class="logo__text">Titos of Llano</div>
 		</a>
@@ -31,7 +31,7 @@
 
   <div class="maincontainer" on:scroll={ scrollIt }>
  
-	<section class="landing">
+	<section class="landing" id="landing">
     <div class="landing__logo">
       <h1>
         <span>
